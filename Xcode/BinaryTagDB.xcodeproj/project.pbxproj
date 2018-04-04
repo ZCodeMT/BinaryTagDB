@@ -29,6 +29,7 @@
 		1E9E6C932075335800F06BC0 /* entities.dat in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C902075335800F06BC0 /* entities.dat */; };
 		1E9E6C942075335800F06BC0 /* level.dat in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C912075335800F06BC0 /* level.dat */; };
 		1E9E6C952075335800F06BC0 /* bigtest.nbt in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C922075335800F06BC0 /* bigtest.nbt */; };
+		1E9E6C9720753C3000F06BC0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C9620753C3000F06BC0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		1E9E6C902075335800F06BC0 /* entities.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = entities.dat; sourceTree = "<group>"; };
 		1E9E6C912075335800F06BC0 /* level.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = level.dat; sourceTree = "<group>"; };
 		1E9E6C922075335800F06BC0 /* bigtest.nbt */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigtest.nbt; sourceTree = "<group>"; };
+		1E9E6C9620753C3000F06BC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		1E007B6820728194001F8FED = {
 			isa = PBXGroup;
 			children = (
+				1E9E6C9620753C3000F06BC0 /* README.md */,
 				1E007B7420728194001F8FED /* BinaryTagDB */,
 				1E007B7F20728194001F8FED /* BinaryTagDBTests */,
 				1E007B7320728194001F8FED /* Products */,
@@ -253,6 +256,7 @@
 			files = (
 				1E9E6C952075335800F06BC0 /* bigtest.nbt in Resources */,
 				1E9E6C942075335800F06BC0 /* level.dat in Resources */,
+				1E9E6C9720753C3000F06BC0 /* README.md in Resources */,
 				1E9E6C932075335800F06BC0 /* entities.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E007B7C20728194001F8FED /* BinaryTagDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E007B7220728194001F8FED /* BinaryTagDB.framework */; };
+		1E007B8120728194001F8FED /* BinaryTagDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E007B8020728194001F8FED /* BinaryTagDBTests.swift */; };
+		1E007B8D20728455001F8FED /* BinaryTagDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E007B8C20728455001F8FED /* BinaryTagDB.swift */; };
+		1E007B8F20728517001F8FED /* BinaryTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E007B8E20728517001F8FED /* BinaryTag.swift */; };
+		1E007B9120728706001F8FED /* ByteTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E007B9020728706001F8FED /* ByteTag.swift */; };
+		1E007B9320728989001F8FED /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E007B9220728989001F8FED /* BinaryDecoder.swift */; };
+		1E007B95207289FA001F8FED /* BinaryTagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E007B94207289FA001F8FED /* BinaryTagError.swift */; };
+		1E71FC0E2073CAC5004BB797 /* BinaryCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC0D2073CAC5004BB797 /* BinaryCoder.swift */; };
+		1E71FC102073CE16004BB797 /* ShortTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC0F2073CE16004BB797 /* ShortTag.swift */; };
+		1E71FC162073CFAA004BB797 /* IntTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC152073CFAA004BB797 /* IntTag.swift */; };
+		1E71FC182073CFC7004BB797 /* LongTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC172073CFC7004BB797 /* LongTag.swift */; };
+		1E71FC1A2073CFF0004BB797 /* FloatTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC192073CFF0004BB797 /* FloatTag.swift */; };
+		1E71FC1C2073D012004BB797 /* DoubleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC1B2073D012004BB797 /* DoubleTag.swift */; };
+		1E71FC1E2073D057004BB797 /* ByteArrayTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC1D2073D057004BB797 /* ByteArrayTag.swift */; };
+		1E71FC202073D187004BB797 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71FC1F2073D187004BB797 /* Color.swift */; };
+		1E9E6C88207522D400F06BC0 /* IntArrayTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E6C87207522D400F06BC0 /* IntArrayTag.swift */; };
+		1E9E6C8A2075236500F06BC0 /* StringTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E6C892075236500F06BC0 /* StringTag.swift */; };
+		1E9E6C8C2075254A00F06BC0 /* ListTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E6C8B2075254A00F06BC0 /* ListTag.swift */; };
+		1E9E6C8E2075292100F06BC0 /* CompoundTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E6C8D2075292100F06BC0 /* CompoundTag.swift */; };
+		1E9E6C932075335800F06BC0 /* entities.dat in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C902075335800F06BC0 /* entities.dat */; };
+		1E9E6C942075335800F06BC0 /* level.dat in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C912075335800F06BC0 /* level.dat */; };
+		1E9E6C952075335800F06BC0 /* bigtest.nbt in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C922075335800F06BC0 /* bigtest.nbt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E007B7D20728194001F8FED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E007B6920728194001F8FED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E007B7120728194001F8FED;
+			remoteInfo = BinaryTagDB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E007B7220728194001F8FED /* BinaryTagDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BinaryTagDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E007B7620728194001F8FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Xcode/BinaryTagDB/Info.plist; sourceTree = "<group>"; };
+		1E007B7B20728194001F8FED /* BinaryTagDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinaryTagDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E007B8020728194001F8FED /* BinaryTagDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTagDBTests.swift; sourceTree = "<group>"; };
+		1E007B8220728194001F8FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Xcode/BinaryTagDBTests/Info.plist; sourceTree = "<group>"; };
+		1E007B8C20728455001F8FED /* BinaryTagDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTagDB.swift; sourceTree = "<group>"; };
+		1E007B8E20728517001F8FED /* BinaryTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTag.swift; sourceTree = "<group>"; };
+		1E007B9020728706001F8FED /* ByteTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteTag.swift; sourceTree = "<group>"; };
+		1E007B9220728989001F8FED /* BinaryDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
+		1E007B94207289FA001F8FED /* BinaryTagError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTagError.swift; sourceTree = "<group>"; };
+		1E71FC0D2073CAC5004BB797 /* BinaryCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCoder.swift; sourceTree = "<group>"; };
+		1E71FC0F2073CE16004BB797 /* ShortTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTag.swift; sourceTree = "<group>"; };
+		1E71FC152073CFAA004BB797 /* IntTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTag.swift; sourceTree = "<group>"; };
+		1E71FC172073CFC7004BB797 /* LongTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTag.swift; sourceTree = "<group>"; };
+		1E71FC192073CFF0004BB797 /* FloatTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatTag.swift; sourceTree = "<group>"; };
+		1E71FC1B2073D012004BB797 /* DoubleTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTag.swift; sourceTree = "<group>"; };
+		1E71FC1D2073D057004BB797 /* ByteArrayTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteArrayTag.swift; sourceTree = "<group>"; };
+		1E71FC1F2073D187004BB797 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1E9E6C87207522D400F06BC0 /* IntArrayTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntArrayTag.swift; sourceTree = "<group>"; };
+		1E9E6C892075236500F06BC0 /* StringTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTag.swift; sourceTree = "<group>"; };
+		1E9E6C8B2075254A00F06BC0 /* ListTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTag.swift; sourceTree = "<group>"; };
+		1E9E6C8D2075292100F06BC0 /* CompoundTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundTag.swift; sourceTree = "<group>"; };
+		1E9E6C902075335800F06BC0 /* entities.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = entities.dat; sourceTree = "<group>"; };
+		1E9E6C912075335800F06BC0 /* level.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = level.dat; sourceTree = "<group>"; };
+		1E9E6C922075335800F06BC0 /* bigtest.nbt */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigtest.nbt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E007B6E20728194001F8FED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E007B7820728194001F8FED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E007B7C20728194001F8FED /* BinaryTagDB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E007B6820728194001F8FED = {
+			isa = PBXGroup;
+			children = (
+				1E007B7420728194001F8FED /* BinaryTagDB */,
+				1E007B7F20728194001F8FED /* BinaryTagDBTests */,
+				1E007B7320728194001F8FED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E007B7320728194001F8FED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E007B7220728194001F8FED /* BinaryTagDB.framework */,
+				1E007B7B20728194001F8FED /* BinaryTagDBTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E007B7420728194001F8FED /* BinaryTagDB */ = {
+			isa = PBXGroup;
+			children = (
+				1E007B7620728194001F8FED /* Info.plist */,
+				1E007B8C20728455001F8FED /* BinaryTagDB.swift */,
+				1E007B94207289FA001F8FED /* BinaryTagError.swift */,
+				1E71FC1F2073D187004BB797 /* Color.swift */,
+				1E007B9220728989001F8FED /* BinaryDecoder.swift */,
+				1E71FC0D2073CAC5004BB797 /* BinaryCoder.swift */,
+				1E007B8E20728517001F8FED /* BinaryTag.swift */,
+				1E007B9020728706001F8FED /* ByteTag.swift */,
+				1E71FC0F2073CE16004BB797 /* ShortTag.swift */,
+				1E71FC152073CFAA004BB797 /* IntTag.swift */,
+				1E71FC172073CFC7004BB797 /* LongTag.swift */,
+				1E71FC192073CFF0004BB797 /* FloatTag.swift */,
+				1E71FC1B2073D012004BB797 /* DoubleTag.swift */,
+				1E71FC1D2073D057004BB797 /* ByteArrayTag.swift */,
+				1E9E6C87207522D400F06BC0 /* IntArrayTag.swift */,
+				1E9E6C892075236500F06BC0 /* StringTag.swift */,
+				1E9E6C8B2075254A00F06BC0 /* ListTag.swift */,
+				1E9E6C8D2075292100F06BC0 /* CompoundTag.swift */,
+			);
+			name = BinaryTagDB;
+			path = ../Sources/BinaryTagDB;
+			sourceTree = "<group>";
+		};
+		1E007B7F20728194001F8FED /* BinaryTagDBTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E9E6C8F2075335800F06BC0 /* Data */,
+				1E007B8220728194001F8FED /* Info.plist */,
+				1E007B8020728194001F8FED /* BinaryTagDBTests.swift */,
+			);
+			name = BinaryTagDBTests;
+			path = ../Tests/BinaryTagDBTests;
+			sourceTree = "<group>";
+		};
+		1E9E6C8F2075335800F06BC0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1E9E6C902075335800F06BC0 /* entities.dat */,
+				1E9E6C912075335800F06BC0 /* level.dat */,
+				1E9E6C922075335800F06BC0 /* bigtest.nbt */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1E007B6F20728194001F8FED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1E007B7120728194001F8FED /* BinaryTagDB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E007B8620728194001F8FED /* Build configuration list for PBXNativeTarget "BinaryTagDB" */;
+			buildPhases = (
+				1E007B6D20728194001F8FED /* Sources */,
+				1E007B6E20728194001F8FED /* Frameworks */,
+				1E007B6F20728194001F8FED /* Headers */,
+				1E007B7020728194001F8FED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinaryTagDB;
+			productName = BinaryTagDB;
+			productReference = 1E007B7220728194001F8FED /* BinaryTagDB.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1E007B7A20728194001F8FED /* BinaryTagDBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E007B8920728194001F8FED /* Build configuration list for PBXNativeTarget "BinaryTagDBTests" */;
+			buildPhases = (
+				1E007B7720728194001F8FED /* Sources */,
+				1E007B7820728194001F8FED /* Frameworks */,
+				1E007B7920728194001F8FED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E007B7E20728194001F8FED /* PBXTargetDependency */,
+			);
+			name = BinaryTagDBTests;
+			productName = BinaryTagDBTests;
+			productReference = 1E007B7B20728194001F8FED /* BinaryTagDBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E007B6920728194001F8FED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "ZCodeMT LLC";
+				TargetAttributes = {
+					1E007B7120728194001F8FED = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					1E007B7A20728194001F8FED = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 1E007B6C20728194001F8FED /* Build configuration list for PBXProject "BinaryTagDB" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1E007B6820728194001F8FED;
+			productRefGroup = 1E007B7320728194001F8FED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E007B7120728194001F8FED /* BinaryTagDB */,
+				1E007B7A20728194001F8FED /* BinaryTagDBTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E007B7020728194001F8FED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E007B7920728194001F8FED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E9E6C952075335800F06BC0 /* bigtest.nbt in Resources */,
+				1E9E6C942075335800F06BC0 /* level.dat in Resources */,
+				1E9E6C932075335800F06BC0 /* entities.dat in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E007B6D20728194001F8FED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E9E6C8C2075254A00F06BC0 /* ListTag.swift in Sources */,
+				1E9E6C8E2075292100F06BC0 /* CompoundTag.swift in Sources */,
+				1E71FC0E2073CAC5004BB797 /* BinaryCoder.swift in Sources */,
+				1E007B9120728706001F8FED /* ByteTag.swift in Sources */,
+				1E9E6C88207522D400F06BC0 /* IntArrayTag.swift in Sources */,
+				1E007B9320728989001F8FED /* BinaryDecoder.swift in Sources */,
+				1E007B8D20728455001F8FED /* BinaryTagDB.swift in Sources */,
+				1E71FC202073D187004BB797 /* Color.swift in Sources */,
+				1E71FC1E2073D057004BB797 /* ByteArrayTag.swift in Sources */,
+				1E71FC1C2073D012004BB797 /* DoubleTag.swift in Sources */,
+				1E9E6C8A2075236500F06BC0 /* StringTag.swift in Sources */,
+				1E71FC182073CFC7004BB797 /* LongTag.swift in Sources */,
+				1E71FC1A2073CFF0004BB797 /* FloatTag.swift in Sources */,
+				1E007B8F20728517001F8FED /* BinaryTag.swift in Sources */,
+				1E007B95207289FA001F8FED /* BinaryTagError.swift in Sources */,
+				1E71FC162073CFAA004BB797 /* IntTag.swift in Sources */,
+				1E71FC102073CE16004BB797 /* ShortTag.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E007B7720728194001F8FED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E007B8120728194001F8FED /* BinaryTagDBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E007B7E20728194001F8FED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E007B7120728194001F8FED /* BinaryTagDB */;
+			targetProxy = 1E007B7D20728194001F8FED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E007B8420728194001F8FED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1E007B8520728194001F8FED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1E007B8720728194001F8FED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BinaryTagDB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zcodemt.BinaryTagDB;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1E007B8820728194001F8FED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BinaryTagDB/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zcodemt.BinaryTagDB;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		1E007B8A20728194001F8FED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BinaryTagDBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zcodemt.BinaryTagDBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1E007B8B20728194001F8FED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BinaryTagDBTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zcodemt.BinaryTagDBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E007B6C20728194001F8FED /* Build configuration list for PBXProject "BinaryTagDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E007B8420728194001F8FED /* Debug */,
+				1E007B8520728194001F8FED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E007B8620728194001F8FED /* Build configuration list for PBXNativeTarget "BinaryTagDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E007B8720728194001F8FED /* Debug */,
+				1E007B8820728194001F8FED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E007B8920728194001F8FED /* Build configuration list for PBXNativeTarget "BinaryTagDBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E007B8A20728194001F8FED /* Debug */,
+				1E007B8B20728194001F8FED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E007B6920728194001F8FED /* Project object */;
+}

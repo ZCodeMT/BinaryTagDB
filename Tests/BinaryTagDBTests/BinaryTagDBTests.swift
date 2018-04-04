@@ -12,10 +12,16 @@ import XCTest
 final class BinaryTagDBTests: XCTestCase {
 	func testLevelFile() {
 		do {
+#if os(OSX) || os(iOS)
 			let bundle = Bundle(for: BinaryTagDBTests.self)
-			let bundleURL = bundle.url(forResource: "level", withExtension: "dat")
-			let dirtyURL = URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
-			let levelURL = bundleURL == nil ? dirtyURL : bundleURL!
+			guard let levelURL = bundle.url(forResource: "level", withExtension: "dat") else {
+				throw BinaryTagError.Unknown("Test resource 'level.dat' not found in bundle")
+			}
+#elseif os(Linux)
+			let levelURL = URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
+#else
+			let levelURL = URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
+#endif
 			let data = try Data(contentsOf: levelURL)
 			let decoder = BinaryDecoder(data: data)
 			print("level.data Int[0]: \(try decoder.decode() as Int32)")

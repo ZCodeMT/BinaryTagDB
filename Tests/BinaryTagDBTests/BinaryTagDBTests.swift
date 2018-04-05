@@ -28,6 +28,8 @@ final class BinaryTagDBTests: XCTestCase {
 			print("level.data Int[1]: \(try decoder.decode() as Int32)")
 			let db = try BinaryTagDB(decoder: decoder, byteOrder: .LittleEndian)
 			db.printTextFormat(color: true)
+			let writeURL = URL(fileURLWithPath: "Desktop/level_rewrite.dat", relativeTo: FileManager.default.homeDirectoryForCurrentUser)
+			try db.save(to: writeURL)
 		} catch BinaryTagError.Unknown(let message) {
 			XCTFail(message)
 		} catch let error {

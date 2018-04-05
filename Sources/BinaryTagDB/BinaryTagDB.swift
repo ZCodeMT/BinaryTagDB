@@ -29,13 +29,19 @@ public class BinaryTagDB {
 		content = try tagType.decodeTag(decoder: decoder, byteOrder: byteOrder) as! CompoundTag
 	}
 	
-	func encode(coder: BinaryCoder, byteOrder: ByteOrder = ByteOrder.current) {
+	public func encode(coder: BinaryCoder, byteOrder: ByteOrder = ByteOrder.current) {
 		coder.encode(BinaryTagType.Compound)
 		StringTag(payload: name).encode(coder: coder, byteOrder: byteOrder)
 		content.encode(coder: coder, byteOrder: byteOrder)
 	}
 	
-	func printTextFormat(color: Bool = false) {
+	public func save(to location: URL, byteOrder: ByteOrder = ByteOrder.current) throws {
+		let coder = BinaryCoder()
+		encode(coder: coder, byteOrder: byteOrder)
+		try coder.data.write(to: location)
+	}
+	
+	public func makeTextFormat(color: Bool) -> String {
 		var text = ""
 		if color {
 			text += Color.tagType.makeText()
@@ -54,6 +60,10 @@ public class BinaryTagDB {
 			text += Color.Reset.makeText()
 		}
 		text += ": " + content.makeTextFormat(indentation: 0, color: color)
-		print(text)
+		return text
+	}
+	
+	func printTextFormat(color: Bool = false) {
+		print(makeTextFormat(color: color))
 	}
 }

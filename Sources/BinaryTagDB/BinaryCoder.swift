@@ -38,7 +38,9 @@ public class BinaryCoder {
 	
 	public func encode<T>(_ value: T) {
 		requireMemory(size: MemoryLayout<T>.size)
-		buffer.storeBytes(of: value, toByteOffset: index, as: T.self)
+		buffer.advanced(by: index).bindMemory(to: T.self, capacity: 1)[0] = value
+		buffer.advanced(by: index).bindMemory(to: Int8.self, capacity: MemoryLayout<T>.size)
+//		buffer.storeBytes(of: value, toByteOffset: index, as: T.self)
 		index += MemoryLayout<T>.size
 	}
 	
@@ -72,8 +74,8 @@ public class BinaryCoder {
 	public func encodeString(_ value: String) {
 		requireMemory(size: value.lengthOfBytes(using: .utf8))
 		if let rawString = value.cString(using: .utf8) {
-			for byte in rawString {
-				encode(byte)
+			for i in 0 ..< value.lengthOfBytes(using: .utf8) {
+				encode(rawString[i])
 			}
 		} else {
 			fatalError()

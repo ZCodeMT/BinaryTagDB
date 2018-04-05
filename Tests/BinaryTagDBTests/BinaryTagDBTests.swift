@@ -9,27 +9,36 @@
 import XCTest
 @testable import BinaryTagDB
 
+@available(OSX 10.12, *)
 final class BinaryTagDBTests: XCTestCase {
 	func testLevelFile() {
 		do {
-#if os(OSX) || os(iOS)
-			let bundle = Bundle(for: BinaryTagDBTests.self)
-			guard let levelURL = bundle.url(forResource: "level", withExtension: "dat") else {
-				throw BinaryTagError.Unknown("Test resource 'level.dat' not found in bundle")
-			}
-#elseif os(Linux)
-			let levelURL = URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
-#else
-			let levelURL = URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
-#endif
+			var commandLine = true
+			let levelURL = try { () -> URL in
+				#if os(OSX) || os(iOS)
+				if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+					let bundle = Bundle(for: BinaryTagDBTests.self)
+					commandLine = bundle.bundleURL.pathComponents.last! != "BinaryTagDBTests.xctest"
+					guard let levelURL = bundle.url(forResource: "level", withExtension: "dat") else {
+						throw BinaryTagError.Unknown("Test resource 'level.dat' not found in bundle")
+					}
+					return levelURL
+				} else {
+					return URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
+				}
+				#else
+				return URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
+				#endif
+			}()
 			let data = try Data(contentsOf: levelURL)
 			let decoder = BinaryDecoder(data: data)
 			print("level.data Int[0]: \(try decoder.decode() as Int32)")
 			print("level.data Int[1]: \(try decoder.decode() as Int32)")
 			let db = try BinaryTagDB(decoder: decoder, byteOrder: .LittleEndian)
-			db.printTextFormat(color: true)
+			db.printTextFormat(color: commandLine)
 			let writeURL = URL(fileURLWithPath: "Desktop/level_rewrite.dat", relativeTo: FileManager.default.homeDirectoryForCurrentUser)
 			try db.save(to: writeURL)
+			print(db.request(location: URL(string: "Player/Pos")!)!.makeTextFormat(indentation: 0, color: commandLine))
 		} catch BinaryTagError.Unknown(let message) {
 			XCTFail(message)
 		} catch let error {

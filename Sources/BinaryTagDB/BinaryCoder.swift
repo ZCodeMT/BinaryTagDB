@@ -40,7 +40,6 @@ public class BinaryCoder {
 		requireMemory(size: MemoryLayout<T>.size)
 		buffer.advanced(by: index).bindMemory(to: T.self, capacity: 1)[0] = value
 		buffer.advanced(by: index).bindMemory(to: Int8.self, capacity: MemoryLayout<T>.size)
-//		buffer.storeBytes(of: value, toByteOffset: index, as: T.self)
 		index += MemoryLayout<T>.size
 	}
 	

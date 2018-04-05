@@ -63,7 +63,27 @@ public class BinaryTagDB {
 		return text
 	}
 	
-	func printTextFormat(color: Bool = false) {
+	public func printTextFormat(color: Bool = false) {
 		print(makeTextFormat(color: color))
+	}
+	
+	public func request(location: URL) -> BinaryTag? {
+		var dictionary = content
+		var components = location.pathComponents
+		if components.count == 0 {
+			return nil
+		}
+		components.removeLast()
+		for component in components {
+			if let nextTag = dictionary.request(name: component) {
+				if nextTag.type != .Compound {
+					return nil
+				}
+				dictionary = nextTag as! CompoundTag
+			} else {
+				return nil
+			}
+		}
+		return dictionary.request(name: location.pathComponents.last!)
 	}
 }

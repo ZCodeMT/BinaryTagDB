@@ -68,4 +68,8 @@ public class CompoundTag: BinaryTag {
 		}
 		return text
 	}
+	
+	public func request(name: String) -> BinaryTag? {
+		return payload[name]
+	}
 }

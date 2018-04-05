@@ -14,8 +14,8 @@ final class BinaryTagDBTests: XCTestCase {
 	func testLevelFile() {
 		do {
 			var commandLine = true
+			#if os(OSX) || os(iOS)
 			let levelURL = try { () -> URL in
-				#if os(OSX) || os(iOS)
 				if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
 					let bundle = Bundle(for: BinaryTagDBTests.self)
 					commandLine = bundle.bundleURL.pathComponents.last! != "BinaryTagDBTests.xctest"
@@ -26,10 +26,10 @@ final class BinaryTagDBTests: XCTestCase {
 				} else {
 					return URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
 				}
-				#else
-				return URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
-				#endif
 			}()
+			#else
+			let levelURL = URL(fileURLWithPath: "Tests/BinaryTagDBTests/Data/level.dat")
+			#endif
 			let data = try Data(contentsOf: levelURL)
 			let decoder = BinaryDecoder(data: data)
 			print("level.data Int[0]: \(try decoder.decode() as Int32)")

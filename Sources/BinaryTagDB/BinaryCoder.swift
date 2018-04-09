@@ -43,7 +43,7 @@ public class BinaryCoder {
 		index += MemoryLayout<T>.size
 	}
 	
-	public func encodeNumber<T: FixedWidthInteger>(_ value: T, byteOrder: ByteOrder = ByteOrder.current) {
+	public func encodeNumber<T: FixedWidthInteger>(_ value: T, byteOrder: ByteOrder /* = ByteOrder.current */) {
 		switch byteOrder {
 		case .LittleEndian:
 			encode(value.littleEndian)
@@ -52,7 +52,7 @@ public class BinaryCoder {
 		}
 	}
 	
-	public func encodeNumber(_ value: Float32, byteOrder: ByteOrder = ByteOrder.current) {
+	public func encodeNumber(_ value: Float32, byteOrder: ByteOrder /* = ByteOrder.current */) {
 		switch byteOrder {
 		case .LittleEndian:
 			encode(value.bitPattern.littleEndian)
@@ -61,7 +61,7 @@ public class BinaryCoder {
 		}
 	}
 	
-	public func encodeNumber(_ value: Float64, byteOrder: ByteOrder = ByteOrder.current) {
+	public func encodeNumber(_ value: Float64, byteOrder: ByteOrder /* = ByteOrder.current */) {
 		switch byteOrder {
 		case .LittleEndian:
 			encode(value.bitPattern.littleEndian)

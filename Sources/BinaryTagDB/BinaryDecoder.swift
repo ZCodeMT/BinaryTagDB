@@ -31,21 +31,21 @@ public class BinaryDecoder {
 		}
 	}
 	
-	public func decodeNumber<T: FixedWidthInteger>(byteOrder: ByteOrder = ByteOrder.current) throws -> T {
+	public func decodeNumber<T: FixedWidthInteger>(byteOrder: ByteOrder /* = ByteOrder.current */) throws -> T {
 		switch byteOrder {
 		case .BigEndian: return (try decode() as T).bigEndian
 		case .LittleEndian: return (try decode() as T).littleEndian
 		}
 	}
 	
-	public func decodeNumber(byteOrder: ByteOrder = ByteOrder.current) throws -> Float32 {
+	public func decodeNumber(byteOrder: ByteOrder /* = ByteOrder.current */) throws -> Float32 {
 		switch byteOrder {
 		case .BigEndian: return Float32(bitPattern: (try decode() as UInt32).bigEndian)
 		case .LittleEndian: return Float32(bitPattern: (try decode() as UInt32).littleEndian)
 		}
 	}
 	
-	public func decodeNumber(byteOrder: ByteOrder = ByteOrder.current) throws -> Float64 {
+	public func decodeNumber(byteOrder: ByteOrder /* = ByteOrder.current */) throws -> Float64 {
 		switch byteOrder {
 		case .BigEndian: return Float64(bitPattern: (try decode() as UInt64).bigEndian)
 		case .LittleEndian: return Float64(bitPattern: (try decode() as UInt64).littleEndian)

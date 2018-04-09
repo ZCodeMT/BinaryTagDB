@@ -10,4 +10,5 @@ public enum BinaryTagError: Error {
 	case System(String)
 	case Unknown(String)
 	case DataFormat(String)
+	case Compression
 }

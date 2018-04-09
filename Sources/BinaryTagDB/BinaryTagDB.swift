@@ -12,12 +12,18 @@ public class BinaryTagDB {
 	var name: String
 	var content: CompoundTag
 	
-	convenience init(location: URL, byteOrder: ByteOrder = ByteOrder.current) throws {
-		try self.init(data: try Data(contentsOf: location), byteOrder: byteOrder)
+	convenience init(location: URL, compressed: Bool = false, byteOrder: ByteOrder = ByteOrder.current) throws {
+		try self.init(data: try Data(contentsOf: location), compressed: compressed, byteOrder: byteOrder)
 	}
 	
-	convenience init(data: Data, byteOrder: ByteOrder = ByteOrder.current) throws {
-		try self.init(decoder: BinaryDecoder(data: data), byteOrder: byteOrder)
+	convenience init(data: Data, compressed: Bool = false, byteOrder: ByteOrder = ByteOrder.current) throws {
+		if compressed {
+			let decompressedData = try GZIPDecompress(data: data)
+//			try decompressedData.write(to: URL(fileURLWithPath: "Desktop/decompressed.data", relativeTo: FileManager.default.homeDirectoryForCurrentUser))
+			try self.init(decoder: BinaryDecoder(data: decompressedData), byteOrder: byteOrder)
+		} else {
+			try self.init(decoder: BinaryDecoder(data: data), byteOrder: byteOrder)
+		}
 	}
 	
 	init(decoder: BinaryDecoder, byteOrder: ByteOrder = ByteOrder.current) throws {
@@ -35,10 +41,14 @@ public class BinaryTagDB {
 		content.encode(coder: coder, byteOrder: byteOrder)
 	}
 	
-	public func save(to location: URL, byteOrder: ByteOrder = ByteOrder.current) throws {
+	public func save(to location: URL, compressed: Bool = false, byteOrder: ByteOrder = ByteOrder.current) throws {
 		let coder = BinaryCoder()
 		encode(coder: coder, byteOrder: byteOrder)
-		try coder.data.write(to: location)
+		if compressed {
+			try GZIPCompress(data: coder.data).write(to: location)
+		} else {
+			try coder.data.write(to: location)
+		}
 	}
 	
 	public func makeTextFormat(color: Bool) -> String {

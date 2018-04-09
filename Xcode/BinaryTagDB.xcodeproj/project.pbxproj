@@ -30,6 +30,7 @@
 		1E9E6C942075335800F06BC0 /* level.dat in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C912075335800F06BC0 /* level.dat */; };
 		1E9E6C952075335800F06BC0 /* bigtest.nbt in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C922075335800F06BC0 /* bigtest.nbt */; };
 		1E9E6C9720753C3000F06BC0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1E9E6C9620753C3000F06BC0 /* README.md */; };
+		1E9EF263207BC2C900655584 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EF262207BC2C900655584 /* Compression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		1E9E6C912075335800F06BC0 /* level.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = level.dat; sourceTree = "<group>"; };
 		1E9E6C922075335800F06BC0 /* bigtest.nbt */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigtest.nbt; sourceTree = "<group>"; };
 		1E9E6C9620753C3000F06BC0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1E9EF262207BC2C900655584 /* Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				1E007B8C20728455001F8FED /* BinaryTagDB.swift */,
 				1E007B94207289FA001F8FED /* BinaryTagError.swift */,
 				1E71FC1F2073D187004BB797 /* Color.swift */,
+				1E9EF262207BC2C900655584 /* Compression.swift */,
 				1E007B9220728989001F8FED /* BinaryDecoder.swift */,
 				1E71FC0D2073CAC5004BB797 /* BinaryCoder.swift */,
 				1E007B8E20728517001F8FED /* BinaryTag.swift */,
@@ -274,6 +277,7 @@
 				1E007B9120728706001F8FED /* ByteTag.swift in Sources */,
 				1E9E6C88207522D400F06BC0 /* IntArrayTag.swift in Sources */,
 				1E007B9320728989001F8FED /* BinaryDecoder.swift in Sources */,
+				1E9EF263207BC2C900655584 /* Compression.swift in Sources */,
 				1E007B8D20728455001F8FED /* BinaryTagDB.swift in Sources */,
 				1E71FC202073D187004BB797 /* Color.swift in Sources */,
 				1E71FC1E2073D057004BB797 /* ByteArrayTag.swift in Sources */,

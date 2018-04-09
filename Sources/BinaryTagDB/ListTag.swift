@@ -19,7 +19,7 @@ public class ListTag: BinaryTag {
 		payloadType = try decoder.decode()
 		payload = Array<BinaryTag>()
 		
-		let length = try decoder.decode() as Int32
+		let length = try decoder.decodeNumber(byteOrder: byteOrder) as Int32
 		for _ in 0 ..< length {
 			payload.append(try payloadType.decodeTag(decoder: decoder, byteOrder: byteOrder))
 		}
@@ -27,7 +27,7 @@ public class ListTag: BinaryTag {
 	
 	public func encode(coder: BinaryCoder, byteOrder: ByteOrder) {
 		coder.encode(payloadType)
-		coder.encode(Int32(payload.count))
+		coder.encodeNumber(Int32(payload.count), byteOrder: byteOrder)
 		for element in payload {
 			guard element.type == payloadType else {
 				fatalError()

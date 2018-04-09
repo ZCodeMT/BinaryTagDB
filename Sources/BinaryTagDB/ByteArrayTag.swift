@@ -15,14 +15,14 @@ public class ByteArrayTag: BinaryTag {
 	var payload = [Int8]()
 	
 	public required init(decoder: BinaryDecoder, byteOrder: ByteOrder = ByteOrder.current) throws {
-		let length = try decoder.decodeNumber() as Int16
+		let length = try decoder.decodeNumber(byteOrder: byteOrder) as Int32
 		for _ in 0 ..< length {
 			payload.append(try decoder.decode())
 		}
 	}
 	
 	public func encode(coder: BinaryCoder, byteOrder: ByteOrder = ByteOrder.current) {
-		coder.encodeNumber(Int16(payload.count), byteOrder: byteOrder)
+		coder.encodeNumber(Int32(payload.count), byteOrder: byteOrder)
 		for element in payload {
 			coder.encode(element)
 		}
